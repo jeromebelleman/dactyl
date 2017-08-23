@@ -1518,17 +1518,6 @@ var Dactyl = Module("dactyl", XPCOM(Ci.nsISupportsWeakReference, ModuleBase), {
             });
     },
 
-    mappings: function initMappings() {
-        if (dactyl.has("session"))
-            mappings.add([modes.NORMAL], ["ZQ"],
-                "Quit and don't save the session",
-                function () { dactyl.quit(false); });
-
-        mappings.add([modes.NORMAL], ["ZZ"],
-            "Quit and save the session",
-            function () { dactyl.quit(true); });
-    },
-
     commands: function initCommands() {
         commands.add(["dia[log]"],
             "Open a " + config.appName + " dialog",
